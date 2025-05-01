@@ -17,8 +17,11 @@ export default function Home() {
     e.preventDefault();
     setIsSubmitting(true);
 
-    // Simulate API call
-    await new Promise((resolve) => setTimeout(resolve, 1000));
+    await fetch("https://formspree.io/f/xkgroagy", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({ email }),
+    });
 
     trackEvent("email_submitted", { location: "hero_modal" });
     setIsSubmitting(false);
@@ -247,28 +250,12 @@ export default function Home() {
               <br />
               지금 이메일을 등록하고 얼리 액세스 기회를 놓치지 마세요.
             </p>
-            <form
-              className="flex flex-col sm:flex-row gap-4 max-w-2xl mx-auto mb-8"
-              onSubmit={(e) => {
-                e.preventDefault();
-                trackEvent("final_cta_submit");
-              }}
-              action="https://formspree.io/f/xkgroagy"
-              method="POST"
+            <Button
+              className="p-4 mb-4 w-xl rounded-full bg-white text-black hover:bg-gray-200"
+              onClick={() => setShowEmailModal(true)}
             >
-              <input
-                type="email"
-                placeholder="이메일 주소를 입력하세요"
-                className="flex-1 px-6 py-4 rounded-full bg-zinc-800 border border-zinc-700 text-center focus:outline-none focus:ring-2 focus:ring-white"
-                required
-              />
-              <Button
-                type="submit"
-                className="px-8 py-8 rounded-full bg-white text-black hover:bg-gray-200"
-              >
-                얼리 액세스 신청하기
-              </Button>
-            </form>
+              얼리 액세스 신청하기
+            </Button>
             <p className="text-sm text-gray-400">
               개인정보는 안전하게 보호되며, 마케팅 목적으로만 사용됩니다.
               언제든지 구독을 취소할 수 있습니다.
@@ -300,12 +287,7 @@ export default function Home() {
               </div>
 
               {!isSubmitted ? (
-                <form
-                  action="https://formspree.io/f/xkgroagy"
-                  method="POST"
-                  onSubmit={handleSubmit}
-                  className="space-y-4"
-                >
+                <form onSubmit={handleSubmit} className="space-y-4">
                   <div>
                     <label
                       htmlFor="email"
@@ -315,6 +297,7 @@ export default function Home() {
                     </label>
                     <input
                       type="email"
+                      name="email"
                       id="email"
                       value={email}
                       onChange={(e) => setEmail(e.target.value)}

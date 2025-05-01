@@ -204,7 +204,7 @@ export default function ComparisonView() {
           {showTransparent && (
             <div
               ref={keyboardRef}
-              className="absolute bottom-16 left-1/2 -translate-x-1/2 w-[98%] h-[30%] rounded-xl border-2 border-white/60 backdrop-blur-sm transition-opacity duration-300"
+              className="absolute bottom-16 left-1/2 -translate-x-1/2 w-[98%] h-[30%] rounded-xl border-2 border-white/60 backdrop-blur-sm transition-opacity duration-300 touch-none"
               style={{
                 transform: `translate(-50%, ${keyboardPosition.y}px)`,
                 opacity: isScrolling ? 0.1 : 0.4,
