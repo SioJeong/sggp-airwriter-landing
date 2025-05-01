@@ -21,6 +21,7 @@ export default function RootLayout({
   return (
     <html lang="ko" suppressHydrationWarning>
       <head>
+        <link rel="icon" href="/favicon.ico" sizes="any" />
         {/* Meta Pixel Code (placeholder) */}
         <script
           dangerouslySetInnerHTML={{

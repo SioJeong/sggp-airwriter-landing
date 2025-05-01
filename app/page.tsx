@@ -253,6 +253,8 @@ export default function Home() {
                 e.preventDefault();
                 trackEvent("final_cta_submit");
               }}
+              action="https://formspree.io/f/xkgroagy"
+              method="POST"
             >
               <input
                 type="email"
@@ -298,7 +300,12 @@ export default function Home() {
               </div>
 
               {!isSubmitted ? (
-                <form onSubmit={handleSubmit} className="space-y-4">
+                <form
+                  action="https://formspree.io/f/xkgroagy"
+                  method="POST"
+                  onSubmit={handleSubmit}
+                  className="space-y-4"
+                >
                   <div>
                     <label
                       htmlFor="email"
