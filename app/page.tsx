@@ -39,7 +39,7 @@ export default function Home() {
     <AnalyticsWrapper pageEvent="home_page_view">
       <main className="flex min-h-screen flex-col bg-black text-white">
         {/* Hero Section */}
-        <section className="relative flex flex-col items-center justify-center px-4 py-24 md:py-32 text-center">
+        <section className="relative flex flex-col items-center justify-center px-4 py-24 md:py-32">
           <div className="max-w-4xl mx-auto">
             <h1 className="text-4xl md:text-6xl font-bold tracking-tight mb-6">
               넓은 화면에서 방해받지 않고

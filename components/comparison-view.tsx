@@ -254,7 +254,7 @@ export default function ComparisonView() {
       <div className="mt-4 text-center text-gray-300">
         {showTransparent
           ? "AirWriter는 맥락을 유지하며 입력할 수 있습니다."
-          : "일반 키보드는 화면 하단을 크게 차지하여 콘텐츠를 가립니다."}
+          : "일반 키보드는 화면을 크게 차지하여 콘텐츠를 가립니다."}
       </div>
     </div>
   );
